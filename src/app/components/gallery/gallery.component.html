@@ -1,0 +1,11 @@
+<div class="row d-flex justify-content-center align-items-center mt-4 ">
+    <div class="col-12 text-center mb-4">
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#uploadImage">
+            <b>Cargar Imagen/Foto</b>
+        </button>
+    </div>
+    <div class="col-md-3" *ngFor="let image of images">
+        <app-image [image]="image" (emitter)=deleteImage($event)></app-image>
+    </div>
+</div>
+<app-upload (update)=getImages()></app-upload>
